@@ -467,4 +467,8 @@
         <item>@string/reminder_item_title_generic</item>
         <item>@string/reminder_item_title_generic2</item>
     </string-array>
+    <string name="title_activity_pin">PinActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="go">GO</string>
 </resources>
