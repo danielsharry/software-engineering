@@ -172,10 +172,12 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         final PrimaryDrawerItem itemExport = new PrimaryDrawerItem().withName(R.string.sidebar_backup_export).withIcon(R.drawable.ic_backup_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemFeedback = new PrimaryDrawerItem().withName(R.string.menu_support).withIcon(R.drawable.ic_announcement_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemAbout = new PrimaryDrawerItem().withName(R.string.preferences_about_glucosio).withIcon(R.drawable.ic_info_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
-        final PrimaryDrawerItem itemInvite = new PrimaryDrawerItem().withName(R.string.action_invite).withIcon(R.drawable.ic_face_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
+        final PrimaryDrawerItem itemInvite = new PrimaryDrawerItem().withName("Invite a Friend").withIcon(R.drawable.ic_face_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemDonate = new PrimaryDrawerItem().withName(R.string.about_donate).withIcon(R.drawable.ic_favorite_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemA1C = new PrimaryDrawerItem().withName(R.string.activity_converter_title).withIcon(R.drawable.ic_calculator_a1c_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
         final PrimaryDrawerItem itemReminders = new PrimaryDrawerItem().withName(R.string.activity_reminders_title).withIcon(R.drawable.ic_alarm_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
+        final PrimaryDrawerItem itemNotes = new PrimaryDrawerItem().withName("Notes").withIcon(R.drawable.ic_info_grey_24dp).withSelectable(false).withTypeface(Typeface.DEFAULT_BOLD);
+
 
         DrawerBuilder drawerBuilder = new DrawerBuilder()
                 .withActivity(this)
@@ -212,6 +214,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                             openA1CCalculator();
                         } else if (drawerItem.equals(itemReminders)) {
                             openRemindersActivity();
+                        } else if (drawerItem.equals(itemNotes )){
+                            openNotesActivity();
                         }
                         return false;
                     }
@@ -226,7 +230,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     itemFeedback,
                     itemAbout,
                     itemDonate,
-                    itemInvite
+                    itemInvite,
+                    itemNotes
             )
                     .withSelectedItem(-1)
                     .build();
@@ -238,7 +243,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     itemSettings,
                     itemFeedback,
                     itemAbout,
-                    itemDonate
+                    itemDonate,
+                    itemNotes
             )
                     .withSelectedItem(-1)
                     .build();
@@ -320,6 +326,12 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
+
+    private void openNotesActivity(){
+        Intent intent = new Intent(this,NotesActivity.class );
+        startActivity(intent);
+    }
+
 
     public void startHelloActivity() {
         Intent intent = new Intent(this, HelloActivity.class);
