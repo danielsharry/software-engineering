@@ -72,6 +72,9 @@ public class HelloActivity extends AppCompatActivity implements HelloView {
     @BindView(R.id.activity_hello_age)
     TextView ageTextView;
 
+    @BindView(R.id.activity_hello_pin)
+    TextView pinTextView;
+
     private HelloPresenter presenter;
 
     private List<String> localesWithTranslation;
@@ -170,7 +173,8 @@ public class HelloActivity extends AppCompatActivity implements HelloView {
                 localesWithTranslation.get(languageSpinner.getSpinner().getSelectedItemPosition()),
                 countrySpinner.getSpinner().getSelectedItem().toString(),
                 typeSpinner.getSpinner().getSelectedItemPosition() + 1,
-                unitSpinner.getSpinner().getSelectedItem().toString());
+                unitSpinner.getSpinner().getSelectedItem().toString(),
+                Integer.valueOf(pinTextView.getText().toString()));
     }
 
     @OnClick(R.id.helloactivity_textview_terms)

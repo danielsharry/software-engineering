@@ -42,12 +42,13 @@ public class User extends RealmObject {
     private String preferred_range;
     private int custom_range_min;
     private int custom_range_max;
+    private int pin;
 
     public User() {
 
     }
 
-    public User(int id, String name, String preferred_language, String country, int age, String gender, int dType, String pUnit, String a1cUnit, String weightUnit, String pRange, int minRange, int maxRange) {
+    public User(int id, String name, String preferred_language, String country, int age, String gender, int dType, String pUnit, String a1cUnit, String weightUnit, String pRange, int minRange, int maxRange, int pin) {
         this.id = id;
         this.name = name;
         this.preferred_language = preferred_language;
@@ -61,6 +62,7 @@ public class User extends RealmObject {
         this.preferred_range = pRange;
         this.custom_range_max = maxRange;
         this.custom_range_min = minRange;
+        this.pin = pin;
     }
 
     public int getD_type() {
@@ -165,5 +167,13 @@ public class User extends RealmObject {
 
     public void setPreferred_unit_weight(String preferred_unit_weight) {
         this.preferred_unit_weight = preferred_unit_weight;
+    }
+
+    public int getPin() {
+        return pin;
+    }
+
+    public void setPin(int pin) {
+        this.pin = pin;
     }
 }
