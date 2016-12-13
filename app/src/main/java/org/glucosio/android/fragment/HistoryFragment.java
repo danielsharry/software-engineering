@@ -131,12 +131,13 @@ public class HistoryFragment extends Fragment {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                // Do nothing
+                // show sheet
+                showBottomSheetDialog(view);
             }
 
             @Override
             public void onItemLongClick(final View view, final int position) {
-                // if touch Glucose or weight item
+                // Do same as click
                 showBottomSheetDialog(view);
             }
         }));
