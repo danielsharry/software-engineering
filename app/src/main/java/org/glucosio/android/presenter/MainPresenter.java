@@ -35,13 +35,10 @@ public class MainPresenter {
         if (dB.getUser(1) == null) {
             // if user doesn't exists start hello activity
             mainActivity.startHelloActivity();
-        } else if (!mainActivity.isPinAccepted()){
-            mainActivity.startPinActivity();
-        }
-        else {
+        } else {
             // If user already exists, update user's preferred language and recreate MainActivity
             mainActivity.getLocaleHelper().updateLanguage(mainActivity,
-                    dB.getUser(1).getPreferred_language());
+                                                          dB.getUser(1).getPreferred_language());
         }
     }
 

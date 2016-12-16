@@ -96,18 +96,11 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private TabLayout tabLayout;
     private LocaleHelper localeHelper;
 
-    private boolean mIsPinAccepted;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         GlucosioApplication application = (GlucosioApplication) getApplication();
-
-        if (getIntent().getExtras() != null)
-        {
-            mIsPinAccepted = getIntent().getExtras().getBoolean("pin_state");
-        }
 
         initPresenters(application);
         setContentView(R.layout.activity_main);
@@ -342,12 +335,6 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     public void startHelloActivity() {
         Intent intent = new Intent(this, HelloActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void startPinActivity() {
-        Intent intent = new Intent(this, PinActivity.class);
         startActivity(intent);
         finish();
     }
@@ -778,13 +765,5 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
     private void showErrorDialogPlayServices() {
         Toast.makeText(getApplicationContext(), R.string.activity_main_error_play_services, Toast.LENGTH_SHORT).show();
-    }
-
-    public boolean isPinAccepted() {
-        return mIsPinAccepted;
-    }
-
-    public void setIsPinAccepted(boolean isPinAccepted) {
-        this.mIsPinAccepted = isPinAccepted;
     }
 }
