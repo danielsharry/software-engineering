@@ -131,12 +131,13 @@ public class HistoryFragment extends Fragment {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                // Do nothing
+                // show sheet
+                showBottomSheetDialog(view);
             }
 
             @Override
             public void onItemLongClick(final View view, final int position) {
-                // if touch Glucose or weight item
+                // Do same as click
                 showBottomSheetDialog(view);
             }
         }));
@@ -215,7 +216,7 @@ public class HistoryFragment extends Fragment {
                 TextView idTextView = (TextView) itemView.findViewById(R.id.item_history_id);
                 final long idToDelete = Long.parseLong(idTextView.getText().toString());
                 final CardView item = (CardView) itemView.findViewById(R.id.item_history);
-                item.animate().alpha(0.0f).setDuration(2000);
+                item.animate().alpha(0.0f).setDuration(200);
                 Snackbar.make(((MainActivity) getActivity()).getFabView(), R.string.fragment_history_snackbar_text, Snackbar.LENGTH_SHORT).setCallback(new Snackbar.Callback() {
                     @Override
                     public void onDismissed(Snackbar snackbar, int event) {

@@ -56,12 +56,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/circle_hypo_filled" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,12 +72,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/circle_low_filled" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -102,12 +90,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/circle_ok_filled" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,12 +107,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/circle_high_filled" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -147,12 +123,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/circle_hyper_filled" />
 
                 <TextView
                     android:layout_width="wrap_content"
