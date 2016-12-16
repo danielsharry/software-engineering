@@ -282,11 +282,11 @@
     <string name="preferences_font_dyslexia_experimental">EXPERIMENTAL: Increase readability for users with dyslexia</string>
     <string name="preferences_font_dyslexia">Increase readability for users with dyslexia</string>
     <string name="about_donate">Donate to Glucosio</string>
-    <string name="reading_ok">OK</string>
-    <string name="reading_hypo">Hypoglycemia</string>
-    <string name="reading_low">Low</string>
-    <string name="reading_high">High</string>
-    <string name="reading_hyper">Hyperglycemia</string>
+    <string name="reading_ok">● OK</string>
+    <string name="reading_hypo">▼ Hypoglycemia</string>
+    <string name="reading_low">▽ Low</string>
+    <string name="reading_high">△ High</string>
+    <string name="reading_hyper">▲ Hyperglycemia</string>
 
 
     <!-- Future Strings Baked In Early For l10n -->

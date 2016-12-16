@@ -30,6 +30,7 @@ import android.widget.TextView;
 import org.glucosio.android.R;
 import org.glucosio.android.presenter.HistoryPresenter;
 import org.glucosio.android.tools.GlucoseRanges;
+import org.glucosio.android.tools.GlucoseRangesSymbols;
 import org.glucosio.android.tools.GlucosioConverter;
 
 import java.text.NumberFormat;
@@ -151,16 +152,18 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             case 0:
                 idTextView.setText(glucoseIdArray.get(position).toString());
                 GlucoseRanges ranges = new GlucoseRanges(mContext);
+                GlucoseRangesSymbols symbols = new GlucoseRangesSymbols(mContext);
                 String color = ranges.colorFromReading(glucoseReadingArray.get(position));
+                String symbol = symbols.symbolFromReading(glucoseReadingArray.get(position));
 
                 if (presenter.getUnitMeasuerement().equals("mg/dL")) {
                     int glucoseReading = glucoseReadingArray.get(position);
                     String reading = NumberFormat.getInstance().format(glucoseReading);
-                    readingTextView.setText(mContext.getString(R.string.mg_dL_value, reading));
+                    readingTextView.setText(symbol + " " + mContext.getString(R.string.mg_dL_value, reading));
                 } else {
                     double mmol = converter.glucoseToMmolL(glucoseReadingArray.get(position));
                     String reading = NumberFormat.getInstance().format(mmol);
-                    readingTextView.setText(mContext.getString(R.string.mmol_L_value, reading));
+                    readingTextView.setText(symbol + " " + mContext.getString(R.string.mmol_L_value, reading));
                 }
 
                 readingTextView.setTextColor(ranges.stringToColor(color));
