@@ -471,4 +471,5 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="go">GO</string>
+    <string name="app_pin">App PIN</string>
 </resources>
